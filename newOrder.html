@@ -7,13 +7,8 @@
 </head>
 
 <body>
-    <label for="environment">Cap env:</label>
-    <br>
-    <input
-        type="file"
-        id="environment"
-        capture="environment"
-        accept="camera/*"
+    <script src="html5-qrcode.min.js"></script>
+    <div style="width: 500px" id="reader"></div>
     <div class="logo">
         <img src="./logo.png">
     </div>
@@ -21,6 +16,22 @@
         <button onclick="document.location='index.html'">Main Menu</button>
 
     </div>
+    
+    <script>
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+        
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+         console.log(`Scan result: ${decodedText}`, decodedResult);
+         // ...
+        html5QrcodeScanner.clear();
+        // ^ this will stop the scanner (video feed) and clear the scan area.
+        }
+
+         html5QrcodeScanner.render(onScanSuccess);
+    </script>
+    
 </body>
 
 </html>
