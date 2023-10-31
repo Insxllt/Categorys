@@ -1,0 +1,67 @@
+body { 
+    background-color: beige;
+}
+
+.CategoryInput {
+    padding-top: 100px;
+    text-align: center;
+    height: 200px;
+    font-size: 50pt;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input {
+    height: 75px;
+    width: 600px;
+    font-size: 1em;
+}
+
+.createButton {
+    position: absolute;
+    left: 32%;
+    top: 33%;
+    font-size: 40px;
+    height: 100px;
+    width: 370px;
+    border-radius: 40px;
+    color: white;
+    background-color: black;
+}
+
+
+
+p {
+    margin-top: 50px;
+    font-size: 60px;
+    text-align: center;
+    transition: margin 0.5s ease;
+    
+}
+
+p:first-child {
+    margin-top: 500px;
+    font-size: 60px;
+    text-align: center;
+
+}
+
+.box {
+    /* margin-top: 30px;
+    left: 13%;
+    height: 475px; */
+    height: 0;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 40px;
+    position: relative;
+    visibility: hidden;
+    transition: height 1.3s;    
+}
+
+.boxText {
+    font-size: 14px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
