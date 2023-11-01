@@ -1,3 +1,57 @@
+.openNavBurger {
+    font-size: 100px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(15, 15, 15);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.myNavText {
+    margin-top: 75px;
+}
+
+.sidenav a {
+    padding: 30px 8px 8px 22px;
+    padding-top: 30px;
+    text-decoration: none;
+    font-size: 50px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+.sidenav a {
+    margin-top: 0;    
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -1%;
+    right: 0;
+    font-size: 116px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
 body { 
     background-color: beige;
 }
@@ -64,62 +118,4 @@ p:first-child {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.openNavBurger {
-    font-size: 100px;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(15, 15, 15);
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 28px 8px 8px 22px;
-    text-decoration: none;
-    font-size: 45px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 66px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/* @media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-} */
 

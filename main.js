@@ -2,18 +2,6 @@ function createdAlert() {
     alert("Category has been created!");
 }
 
-function loadJSON() {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            var categoryName = data.Categories[numm].CategoryName;
-            document.getElementById("btnnn").innerHTML = categoryName;
-        })
-        .catch(error => {
-            console.error('Error loading JSON:', error);
-        });
-}
-
 var catName = document.getElementById("fname");
 var amountEntered = document.getElementById("amountEntered");
 
@@ -36,7 +24,7 @@ document.getElementById("btnnn").addEventListener("click", function () {
 })
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "400px";
+  document.getElementById("mySidenav").style.width = "505px";
 }
 
 /* Set the width of the side navigation to 0 */
