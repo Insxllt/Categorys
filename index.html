@@ -3,23 +3,40 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/4f8cce4aea.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="data.json"></script>
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
         <div class="myNavText" class="navText">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="home.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
+            <a id ="homeHref" href="home.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
             <a href="index.html"> <i class="fa-solid fa-pen"></i>&nbsp;Manage</a>
             <a href="#"><i class="fa-solid fa-cog"></i>&nbsp;Settings</a>
         </div>
     </div>
 
     <span class="openNavBurger" onclick="openNav()">&#9776;</span>
+    
+    <div class="home">
+        <div class="info-container">
+            <div class="info-box">
+                <h2>Total Budget</h2>
+                <i id="piggy-bank-icon" class="fa-solid fa-piggy-bank fa-3x" style="color: gray;"></i>
+                <p id="box-money" class="box-money" style="margin-bottom: 200px;">$1000</p>
+            </div>
         
+            <div class="info-box">
+                <h2>Total Spent</h2>
+                <i id="hand-dollar-icon" class="fa-solid fa-hand-holding-dollar fa-3x" style="color: gray;"></i>
+                <p id="box-out-money" class="box-out-money" style="margin-bottom: 200px;">$1000</p>
+            </div>
+        </div>
+    </div>
+
     <div id="main">
         <div class="CategoryInput">
             <label for="fname">Category name:</label><br>
-            <input type="text" id="fname" name="fname">
+            <input type="text" id="fname" name="fname" style="top: 200px;">
     
             <label for="amountEntered">Amount:</label><br>
             <input type="text" id="amountEntered" name="amountEntered">
