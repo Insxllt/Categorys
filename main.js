@@ -50,12 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     var openBox;
-    var dataDisplay = document.getElementById("dataDisplay");
     var amounts = [];
+    var dataDisplay = document.getElementById("dataDisplay");
     
     for (let i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
-
+        
         if (key.includes("CategoryName")) {
             var value = localStorage.getItem(key);    
             var keySwap = key.replace("CategoryName", "Amount")
@@ -65,51 +65,78 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(amounts)
             
             var createPara = document.createElement("p");
-            var box = document.createElement("div");
+            var boxContainer = document.createElement("div");
             var boxText = document.createElement("p");
+            boxContainer.style.background = "blue";
             
             
             const node = document.createTextNode(value);
             
             createPara.appendChild(node);
-            createPara.appendChild(box);
-            box.classList.add("box");
+            boxContainer.appendChild(createPara);
+            createPara.style.marginLeft = 60 + "px";
+            createPara.style.textAlign = "center";
+            createPara.id = "textParaId";
+            
             dataDisplay.appendChild(createPara);
             
             createPara.addEventListener("click", function() {
-                var associatedBox = this.querySelector(".box");
+                if (this === openBox) {
+                    this.style.backgroundColor = "rgba(218, 218, 218, 0.476)";
+                    this.style.height = "250px";
+                    openBox = null;
+                } 
+                else 
+                {
+                    if (openBox) {
+                    }
+                    for (let j = 0; j < amounts.length; j++) {
+                    }
+                    // this.style.backgroundColor = "blue";
+                    this.style.transition = "0.9s";
+                    this.style.height = "450px";
                 
-                if (associatedBox === openBox) {
-                    associatedBox.style.visibility = "hidden";
-                associatedBox.style.height = "0";
-                openBox = null;
-            } else {
-                if (openBox) {
-                    openBox.style.visibility = "hidden";
-                    openBox.style.height = "0";
-                }
-                associatedBox.style.visibility = "visible";
-                associatedBox.style.left = 13 + "%";
-                associatedBox.style.width =  750 + "px";
-                associatedBox.style.height = 475 + "px";
-                associatedBox.style.transition = "height 1.3s";
-                associatedBox.style.zIndex = "2";
-                
-                for (let j = 0; j < amounts.length; j++) {
-                    if (this.textContent === amounts[j]) {
-                        boxText.textContent = "Amount: " + amounts[j + 1];
-                        boxText.style.zIndex = "1";
-                        boxText.style.position = "absolute";
-                        boxText.style.top = -470 + "px";
-                        boxText.style.left = 20 + "px";
-                        boxText.style.fontFamily = "Courier New, Courier, monospace"
-                        boxText.style.fontSize = "50px";
-                        associatedBox.appendChild(boxText);
-                    }                    
-                }
-                    openBox = associatedBox;
+
+                    openBox = this;
                 }
             })  
         }
     }
 })
+//             createPara.addEventListener("click", function() {
+//                 var associatedBox = dataDisplay
+                
+//                 if (associatedBox === openBox) {
+//                     associatedBox.style.visibility = "hidden";
+//                 associatedBox.style.height = "0";
+//                 openBox = null;
+//             } else {
+//                 if (openBox) {
+//                     openBox.style.visibility = "hidden";
+//                     openBox.style.height = "0";
+//                 }
+//                 associatedBox.style.visibility = "visible";
+//                 associatedBox.style.left = 13 + "%";
+//                 associatedBox.style.width =  750 + "px";
+//                 associatedBox.style.height = 475 + "px";
+//                 associatedBox.style.transition = "height 1.3s";
+//                 associatedBox.style.zIndex = "2";
+                
+//                 for (let j = 0; j < amounts.length; j++) {
+//                     if (this.textContent === amounts[j]) {
+//                         boxText.textContent = "Amount: " + amounts[j + 1];
+//                         boxText.style.zIndex = "1";
+//                         boxText.style.position = "absolute";
+//                         boxText.style.top = -470 + "px";
+//                         boxText.style.left = 20 + "px";
+//                         boxText.style.fontFamily = "Courier New, Courier, monospace"
+//                         boxText.style.fontSize = "50px";
+//                         associatedBox.appendChild(boxText);
+//                     }                    
+//                 }
+//                     openBox = associatedBox;
+//                 }
+//             })  
+//         }
+//     }
+// })
